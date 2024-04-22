@@ -18,10 +18,10 @@ import java.util.List;
 public interface IUserService {
 
     // 根据userId和status查询优惠券记录
-    List<Coupon> findCouponsByStatus(Long userId, Integer status);
+    List<Coupon> findCouponsByStatus(Long userId, Integer status) throws CouponException;
 
     // 根据userId查找当前可以领取的优惠券模板
-    List<CouponTemplateSDK> findAvailableTemplate(Long userId);
+    List<CouponTemplateSDK> findAvailableTemplate(Long userId) throws CouponException;
 
     // 用户领取优惠券
     Coupon acquireTemplate(AcquireTemplateRequest request) throws CouponException;
